@@ -118,7 +118,7 @@ if __name__ == '__main__':
 #     final, bad_index =remove_badword(nonen_df)
 #     final.to_csv('../../cleandata/2014Q2.csv', sep=';')
     #   for i in np.arange(1,10):
-      print i, "topics"
+      print 50, "topics"
       print "2013 second quarter"
       df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
       topic_modeling(df, 50)
