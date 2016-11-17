@@ -10,6 +10,7 @@ from scipy.cluster.hierarchy import linkage, dendrogram
 from sklearn.decomposition import NMF, LatentDirichletAllocation
 import jw_tokenize as tw
 from langdetect import detect
+from stop_words import get_stop_words
 
 #create dataframe
 def create_df(filename1, filename2, filename3):
@@ -72,7 +73,9 @@ def topic_modeling(df, topics):
     # 1. Apply k-means clustering to the twitter
     # topics = 2
     #df=pd.read_csv(filename, delimiter=';')
-    vectorizer = TfidfVectorizer(stop_words='english',ngram_range=(1,2))
+    stop_words = get_stop_words('en')
+    stop_words.append(['jeans','demin'])
+    vectorizer = TfidfVectorizer(stop_words=stop_words)
     X = vectorizer.fit_transform(df['text'].fillna(''))
     # vectorizer = CountVectorizer(stop_words='english', ngram_range=(1,3))
     # X = vectorizer.fit_transform(df['text'].fillna(''))
