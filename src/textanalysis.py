@@ -74,8 +74,8 @@ def topic_modeling(df, topics):
     # topics = 2
     #df=pd.read_csv(filename, delimiter=';')
     stop_words = get_stop_words('en')
-    stop_words.append('jeans')
-    stop_words.append('denim')
+    stop_words.extend['nigga','wear', 'denim','today','tomorrow'] 
+
     vectorizer = TfidfVectorizer(stop_words=stop_words)
     X = vectorizer.fit_transform(df['text'].fillna(''))
     # vectorizer = CountVectorizer(stop_words='english', ngram_range=(1,3))
