@@ -113,4 +113,4 @@ if __name__ == '__main__':
     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     final, bad_index =remove_badword(nonen_df)
     final.to_csv('2014Q2.csv', sep=';')
-    # topic_modeling(new_df, 5)
+    topic_modeling(final, 5)
