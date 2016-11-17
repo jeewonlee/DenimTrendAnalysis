@@ -118,9 +118,9 @@ if __name__ == '__main__':
 #     final, bad_index =remove_badword(nonen_df)
 #     final.to_csv('../../cleandata/2014Q2.csv', sep=';')
       for i in range(10):
-          df = pd.read('../../cleandata/2013Q2.csv', deliminter=';')
+          df = pd.read_csv('../../cleandata/2013Q2.csv', deliminter=';')
           topic_modeling(df, i)
-          df1 = pd.read('../../cleandata/2014Q2.csv', deliminter=';')
+          df1 = pd.read_csv('../../cleandata/2014Q2.csv', deliminter=';')
           topic_modeling(df1, i)
-          df2 = pd.read('../../cleandata/2015Q2.csv', deliminter=';')
+          df2 = pd.read_csv('../../cleandata/2015Q2.csv', deliminter=';')
           topic_modeling(df2, i)
