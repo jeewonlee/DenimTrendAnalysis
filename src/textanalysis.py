@@ -118,13 +118,13 @@ if __name__ == '__main__':
 #     final, bad_index =remove_badword(nonen_df)
 #     final.to_csv('../../cleandata/2014Q2.csv', sep=';')
     #   for i in np.arange(1,10):
-      print 50, "topics"
+      print 20, "topics"
       print "2013 second quarter"
       df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
-      topic_modeling(df, 30)
+      topic_modeling(df, 20)
       print "2014 second quarter"
       df1 = pd.read_csv('../../cleandata/2014Q2.csv', delimiter=';')
-      topic_modeling(df1, 30)
+      topic_modeling(df1, 20)
       print "2015 second quarter"
       df2 = pd.read_csv('../../cleandata/2015Q2.csv', delimiter=';')
-      topic_modeling(df2, 30)
+      topic_modeling(df2, 20)
