@@ -121,10 +121,10 @@ if __name__ == '__main__':
       print 50, "topics"
       print "2013 second quarter"
       df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
-      topic_modeling(df, 50)
+      topic_modeling(df, 30)
       print "2014 second quarter"
       df1 = pd.read_csv('../../cleandata/2014Q2.csv', delimiter=';')
-      topic_modeling(df1, 50)
+      topic_modeling(df1, 30)
       print "2015 second quarter"
       df2 = pd.read_csv('../../cleandata/2015Q2.csv', delimiter=';')
-      topic_modeling(df2, 50)
+      topic_modeling(df2, 30)
