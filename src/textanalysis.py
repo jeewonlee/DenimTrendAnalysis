@@ -110,11 +110,17 @@ def topic_modeling(df, topics):
     # print_top_words(lda, tf_feature_names, topics)
 
 if __name__ == '__main__':
-    df = create_df('../../data/201403.csv','../../data/201404.csv','../../data/201405.csv')
-    #df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
-    noise_df, noise_arr =remove_noise(df)
-    ads_df, ads_index = filtering_add(noise_df)
-    nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
-    final, bad_index =remove_badword(nonen_df)
-    final.to_csv('../../cleandata/2014Q2.csv', sep=';')
-    #topic_modeling(final, 5)
+#     df = create_df('../../data/201403.csv','../../data/201404.csv','../../data/201405.csv')
+#     #df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+#     noise_df, noise_arr =remove_noise(df)
+#     ads_df, ads_index = filtering_add(noise_df)
+#     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
+#     final, bad_index =remove_badword(nonen_df)
+#     final.to_csv('../../cleandata/2014Q2.csv', sep=';')
+      for i in range(10):
+          df = pd.read('../../cleandata/2013Q2.csv', deliminter=';')
+          topic_modeling(df, i)
+          df1 = pd.read('../../cleandata/2014Q2.csv', deliminter=';')
+          topic_modeling(df1, i)
+          df2 = pd.read('../../cleandata/2015Q2.csv', deliminter=';')
+          topic_modeling(df2, i)
