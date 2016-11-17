@@ -117,14 +117,14 @@ if __name__ == '__main__':
 #     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
 #     final, bad_index =remove_badword(nonen_df)
 #     final.to_csv('../../cleandata/2014Q2.csv', sep=';')
-      for i in np.arange(1,10):
-          print i, "topics"
-          print "2013 second quarter"
-          df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
-          topic_modeling(df, i)
-          print "2014 second quarter"
-          df1 = pd.read_csv('../../cleandata/2014Q2.csv', delimiter=';')
-          topic_modeling(df1, i)
-          print "2015 second quarter"
-          df2 = pd.read_csv('../../cleandata/2015Q2.csv', delimiter=';')
-          topic_modeling(df2, i)
+    #   for i in np.arange(1,10):
+      print i, "topics"
+      print "2013 second quarter"
+      df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
+      topic_modeling(df, 50)
+      print "2014 second quarter"
+      df1 = pd.read_csv('../../cleandata/2014Q2.csv', delimiter=';')
+      topic_modeling(df1, 50)
+      print "2015 second quarter"
+      df2 = pd.read_csv('../../cleandata/2015Q2.csv', delimiter=';')
+      topic_modeling(df2, 50)
