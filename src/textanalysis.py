@@ -107,13 +107,10 @@ def topic_modeling(df, topics):
     # print_top_words(lda, tf_feature_names, topics)
 
 if __name__ == '__main__':
-    df = create_df('../../data/data/201403.csv','../../data/twitter/201404.csv','../../data/twitter/201405.csv')
+    df = create_df('../../data/data/201403.csv','../../data/data/201404.csv','../../data/data/201405.csv')
     noise_df, noise_arr =remove_noise(df)
     ads_df, ads_index = filtering_add(noise_df)
     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     final, bad_index =remove_badword(nonen_df)
     final.to_csv('2014Q2.csv', sep=';')
     # topic_modeling(new_df, 5)
-    # topic_modeling('../../data/twitter/201302.csv')
-    # topic_modeling('../../data/twitter/201303.csv')
-    # topic_modeling('../../data/twitter/201304.csv')
