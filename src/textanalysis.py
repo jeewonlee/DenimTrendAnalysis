@@ -117,7 +117,7 @@ if __name__ == '__main__':
 #     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
 #     final, bad_index =remove_badword(nonen_df)
 #     final.to_csv('../../cleandata/2014Q2.csv', sep=';')
-      for i in range(10):
+      for i in np.arange(1,10):
           df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
           topic_modeling(df, i)
           df1 = pd.read_csv('../../cleandata/2014Q2.csv', delimiter=';')
