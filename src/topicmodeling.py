@@ -98,7 +98,7 @@ if __name__ == '__main__':
     print 20, "topics"
     print "2013 first quarter"
     #df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
-    df = pd.read_csv('../../data/2013Q02.csv', delimiter=';')
+    df = pd.read_csv('../../data/201302.csv', delimiter=';')
     #df = pd.read_csv('../../data/data/201402.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
