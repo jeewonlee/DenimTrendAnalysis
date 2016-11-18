@@ -88,8 +88,8 @@ def run_LDA(vectorizer, X, features, topics):
     words = print_top_words(lda, feature, 20)
     return words
 
-def pca_val(n_topics, pca):
-    vals = pca.explained_variance_ratio_
+def svd_val(n_topics, svd):
+    vals = svd.explained_variance_ratio_
     for i in np.arange(20):
         print i, ": ", vals[i]
 
