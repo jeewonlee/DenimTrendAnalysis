@@ -32,7 +32,7 @@ def vec(df):
 
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
-    with open(filename,'ab') as f:
+    with open('../analysis/analysis.txt','ab') as f:
         for topic_idx, topic in enumerate(model.components_):
             print("Topic #%d:" % topic_idx)
             words=(",".join([feature_names[i]
