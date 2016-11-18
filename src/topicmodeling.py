@@ -62,18 +62,19 @@ def run_kmean(vectorizer, X, features, topics):
 
 def run_nmf(vectorizer, X, features, topics):
     #4.NMF
-    nmf = NMF(n_components=topics, random_state=1,alpha=.1, l1_ratio=.5).fit(X)
+    nmf = NMF(n_components=topics, random_state=1,alpha=.1, l1_ratio=.5)
+    mat = nmf.fit_transform(X)
     print("\nTopics in NMF model:")
     #tfidf_feature_names = vectorizer.get_feature_names()
-    words = print_top_words(nmf, features, 20)
-    return words
+    print_top_words(nmf, features, 20)
+    return mat
 
 def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
-    svd.fit_transform(X)
+    mat = svd.fit_transform(X)
     print("\nTopics in truncated SVD model:")
-    words = print_top_words(svd, features, 20)
-    return svd, topics, words
+    print_top_words(svd, features, 20)
+    return svd, topics, mat
 
 def run_LDA(vectorizer, X, features, topics):
     #5. LDA python algorithm
@@ -81,12 +82,12 @@ def run_LDA(vectorizer, X, features, topics):
                                     learning_method='online',
                                     learning_offset=50.,
                                     random_state=0)
-    lda.fit_transform(X)
+    mat=lda.fit_transform(X)
 
     print("\nTopics in LDA model:")
     # tf_feature_names = vectorizer.get_feature_names()
-    words = print_top_words(lda, feature, 20)
-    return words
+    print_top_words(lda, feature, 20)
+    return mat
 
 def svd_val(n_topics, svd):
     vals = svd.explained_variance_ratio_
@@ -96,14 +97,19 @@ def svd_val(n_topics, svd):
 if __name__ == '__main__':
     print 20, "topics"
     print "2013 first quarter"
-    df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
-    #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
+    #df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
+    df = pd.read_csv('../../data/2013Q02.csv', delimiter=';')
+    #df = pd.read_csv('../../data/data/201402.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_words = run_nmf(vectorizer, X, features, 80)
-    svd, n_topics, svd_words = run_SVD(vectorizer, X, features, 80)
+    nmf_mat = run_nmf(vectorizer, X, features, 50)
+    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
     svd_val(n_topics, svd)
-    lda_words = run_LDA(vectorizer, X, features, 80)
+    lda_mat = run_LDA(vectorizer, X, features, 50)
+    print "nmf mat", nmf_mat.shape()
+    print "svd mat", svd_mat.shape()
+    print "lda mat", lda_mat.shape()
+
 
     # all_words = nmf_words+svd_words
     # stop_words = get_stop_words('en')
