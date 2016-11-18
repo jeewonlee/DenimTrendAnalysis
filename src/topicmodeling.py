@@ -100,8 +100,8 @@ if __name__ == '__main__':
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_words = run_nmf(vectorizer, X, features, 1000)
-    svd, n_topics, svd_words = run_SVD(vectorizer, X, features, 1000)
+    nmf_words = run_nmf(vectorizer, X, features, 500)
+    svd, n_topics, svd_words = run_SVD(vectorizer, X, features, 500)
     svd_val(n_topics, svd)
     #lda_words = run_LDA(vectorizer, X, features, 20)
 
