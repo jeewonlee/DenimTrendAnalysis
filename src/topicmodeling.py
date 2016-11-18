@@ -32,8 +32,8 @@ def vec(df):
 
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
-    with open('../analysis/analysis.txt','ab') as f:
-        f.write("\n\n2013Q2\n")
+    with open('../analysis/analysis100.txt','ab') as f:
+        f.write("\n\n2013Q1\n")
         f.write(model.__class__.__name__)
         f.write("\n")
         for topic_idx, topic in enumerate(model.components_):
@@ -113,19 +113,20 @@ def svd_val(n_topics, svd):
     with open('../analysis/analysis.txt','ab') as f:
         for i in np.arange(20):
             print i, ": ", vals[i]
-            f.write(i, ": ", vals[i])
+            temp = i+': '+vals[i]
+            f.write(str(temp))
     f.close()
 
 if __name__ == '__main__':
     #print 20, "topics"
-    print "2013 first quarter"
-    df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
+#    print "2013 first quarter"
+    df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     #df = pd.read_csv('../../data/data/201402.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_mat = run_nmf(vectorizer, X, features, 50)
-    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
+    nmf_mat = run_nmf(vectorizer, X, features, 100)
+    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 100)
     svd_val(n_topics, svd)
     #lda_mat = run_LDA(vectorizer, X, features, 50)
 #    print "nmf mat", nmf_mat.shape()
