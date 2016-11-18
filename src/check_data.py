@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 
 if __name__ == '__main__':
-    print "2014 Q4"
-    df = pd.read_csv('../../cleandata/2014Q4.csv', sep=';')
-    print df.columns
-    print len(df)
-    print df.date.unique()
+    # print "2014 Q4"
+    # df = pd.read_csv('../../cleandata/2014Q4.csv', sep=';')
+    # print df.columns
+    # print len(df)
+    # print df.date.unique()
     # print "2013 Q2"
     # df = pd.read_csv('../../cleandata/2013Q2.csv', sep=';')
     # print df.columns
@@ -21,4 +21,19 @@ if __name__ == '__main__':
     # df = pd.read_csv('../../cleandata/2015Q2.csv', sep=';')
     # print df.columns
     # print len(df)
+    # print df.date.unique()
+    print "2014 06"
+    df = pd.read_csv('../../data/201406.csv', sep=';')
+    print df.columns
+    print len(df)
+    print df.date.unique()
+    print "2014 07"
+    df = pd.read_csv('../../cleandata/201407.csv', sep=';')
+    print df.columns
+    print len(df)
+    print df.date.unique()
+    print "2014 08"
+    df = pd.read_csv('../../cleandata/201408.csv', sep=';')
+    print df.columns
+    print len(df)
     # print df.date.unique()
