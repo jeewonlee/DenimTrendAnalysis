@@ -32,6 +32,20 @@ def vec(df):
 
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
+    with open(filename,'ab') as f:
+        for topic_idx, topic in enumerate(model.components_):
+            print("Topic #%d:" % topic_idx)
+            words=(" ".join([feature_names[i]
+                            for i in topic.argsort()[:-n_top_words - 1:-1]]))
+            print words
+            allwords.append(words)
+            f.write(words)
+        print()
+    f.close()
+    return allwords
+
+def print_top_words2(model, feature_names, n_top_words):
+    allwords = []
     for topic_idx, topic in enumerate(model.components_):
         print("Topic #%d:" % topic_idx)
         words=(" ".join([feature_names[i]
@@ -66,14 +80,14 @@ def run_nmf(vectorizer, X, features, topics):
     mat = nmf.fit_transform(X)
     print("\nTopics in NMF model:")
     #tfidf_feature_names = vectorizer.get_feature_names()
-    print_top_words(nmf, features, 20)
+    print_top_words2(nmf, features, 20)
     return mat
 
 def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
     mat = svd.fit_transform(X)
     print("\nTopics in truncated SVD model:")
-    print_top_words(svd, features, 20)
+    print_top_words2(svd, features, 20)
     return svd, topics, mat
 
 def run_LDA(vectorizer, X, features, topics):
@@ -97,36 +111,15 @@ def svd_val(n_topics, svd):
 if __name__ == '__main__':
     print 20, "topics"
     print "2013 first quarter"
-    #df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
-    df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
+    df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
+    #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     #df = pd.read_csv('../../data/data/201402.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_mat = run_nmf(vectorizer, X, features, 50)
-    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
+    nmf_mat = run_nmf(vectorizer, X, features, 10)
+    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 10)
     svd_val(n_topics, svd)
     #lda_mat = run_LDA(vectorizer, X, features, 50)
-    print "nmf mat", nmf_mat.shape()
-    print "svd mat", svd_mat.shape()
+#    print "nmf mat", nmf_mat.shape()
+#    print "svd mat", svd_mat.shape()
 #    print "lda mat", lda_mat.shape()
-
-
-    # all_words = nmf_words+svd_words
-    # stop_words = get_stop_words('en')
-    # stop_words.extend(['saturdayonlin','nigga','wear', 'denim','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every','pair'])
-    #
-    # vectorizer2 = TfidfVectorizer(stop_words=stop_words)
-    # X2 = vectorizer.fit_transform(all_words)
-    # # vectorizer = CountVectorizer(stop_words='english', ngram_range=(1,3))
-    # # X = vectorizer.fit_transform(df['text'].fillna(''))
-    # features2 = vectorizer.get_feature_names()
-    # nmf_words2 = run_nmf(vectorizer2, X2, features2, 10)
-    # svd2, n_topics2, svd_words2 = run_SVD(vectorizer2, X2, features2, 10)
-
-    #topic_modeling(df, 20)
-    # print "\n2014 second quarter"
-    # df1 = pd.read_csv('../../cleandata/2014Q2.csv', delimiter=';')
-    # topic_modeling(df1, 20)
-    # print "\n2015 second quarter"
-    # df2 = pd.read_csv('../../cleandata/2015Q2.csv', delimiter=';')
-    # topic_modeling(df2, 20)
