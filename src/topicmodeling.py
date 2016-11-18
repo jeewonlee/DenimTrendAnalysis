@@ -109,7 +109,7 @@ def svd_val(n_topics, svd):
         print i, ": ", vals[i]
 
 if __name__ == '__main__':
-    print 20, "topics"
+    #print 20, "topics"
     print "2013 first quarter"
     df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
