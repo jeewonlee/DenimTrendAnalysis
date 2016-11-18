@@ -35,7 +35,7 @@ def print_top_words(model, feature_names, n_top_words):
     with open(filename,'ab') as f:
         for topic_idx, topic in enumerate(model.components_):
             print("Topic #%d:" % topic_idx)
-            words=(" ".join([feature_names[i]
+            words=(",".join([feature_names[i]
                             for i in topic.argsort()[:-n_top_words - 1:-1]]))
             print words
             allwords.append(words)
@@ -80,14 +80,14 @@ def run_nmf(vectorizer, X, features, topics):
     mat = nmf.fit_transform(X)
     print("\nTopics in NMF model:")
     #tfidf_feature_names = vectorizer.get_feature_names()
-    print_top_words2(nmf, features, 20)
+    print_top_words(nmf, features, 20)
     return mat
 
 def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
     mat = svd.fit_transform(X)
     print("\nTopics in truncated SVD model:")
-    print_top_words2(svd, features, 20)
+    print_top_words(svd, features, 20)
     return svd, topics, mat
 
 def run_LDA(vectorizer, X, features, topics):
@@ -116,8 +116,8 @@ if __name__ == '__main__':
     #df = pd.read_csv('../../data/data/201402.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_mat = run_nmf(vectorizer, X, features, 10)
-    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 10)
+    nmf_mat = run_nmf(vectorizer, X, features, 50)
+    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
     svd_val(n_topics, svd)
     #lda_mat = run_LDA(vectorizer, X, features, 50)
 #    print "nmf mat", nmf_mat.shape()
