@@ -33,7 +33,7 @@ def vec(df):
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
     with open('../analysis/analysis.txt','ab') as f:
-        f.write("\n\n2013Q1\n")
+        f.write("\n\n2013Q2\n")
         f.write(model.__class__.__name__)
         f.write("\n")
         for topic_idx, topic in enumerate(model.components_):
@@ -116,7 +116,7 @@ def svd_val(n_topics, svd):
 if __name__ == '__main__':
     #print 20, "topics"
     print "2013 first quarter"
-    df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
+    df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     #df = pd.read_csv('../../data/data/201402.csv', delimiter=';')
     vectorizer, X, features = vec(df)
