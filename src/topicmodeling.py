@@ -7,7 +7,7 @@ from collections import Counter
 from scipy.spatial.distance import pdist, squareform
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram
-from sklearn.decomposition import NMF, LatentDirichletAllocation, TruncatedPCA
+from sklearn.decomposition import NMF, LatentDirichletAllocation, TruncatedSVD
 import jw_tokenize as tw
 from langdetect import detect
 from stop_words import get_stop_words
@@ -62,10 +62,10 @@ def run_nmf(vectorizer, X, features, topics):
     #tfidf_feature_names = vectorizer.get_feature_names()
     print_top_words(nmf, features, 20)
 
-def run_PCA(vectorizer, X, features, topics):
-    pca = TruncatedPCA(n_components=topics)
+def run_SVD(vectorizer, X, features, topics):
+    pca = TruncatedSVD(n_components=topics)
     pca.fit_transform(X)
-    print("\nTopics in PCA model:")
+    print("\nTopics in truncated SVD model:")
     print_top_words(pca, features, 20)
     return pca, topics
 
