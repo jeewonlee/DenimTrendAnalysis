@@ -62,10 +62,10 @@ def remove_badword(df):
     return df.drop(df.index[bad_index]), bad_index
 
 if __name__ == '__main__':
-    df = create_df('../../data/201409.csv','../../data/201410.csv','../../data/201411.csv')
+    df = create_df('../../data/201412.csv','../../data/201501.csv','../../data/201502.csv')
     #df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     noise_df, noise_arr =remove_noise(df)
     ads_df, ads_index = filtering_ads(noise_df)
     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     final, bad_index =remove_badword(nonen_df)
-    final.to_csv('../../cleandata/2014Q4.csv', sep=';')
+    final.to_csv('../../cleandata/2015Q1.csv', sep=';')

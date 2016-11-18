@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 
 if __name__ == '__main__':
-    print "2013 Q3"
-    df = pd.read_csv('../../cleandata/2013Q3.csv', sep=';')
+    print "2014 Q4"
+    df = pd.read_csv('../../cleandata/2014Q4.csv', sep=';')
     print df.columns
     print len(df)
     print df.date.unique()
