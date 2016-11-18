@@ -8,7 +8,7 @@ from collections import Counter
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram
 #from sklearn.decomposition import NMF, LatentDirichletAllocation
-#import jw_tokenize as tw
+import jw_tokenize as tw
 from langdetect import detect
 #from stop_words import get_stop_words
 
