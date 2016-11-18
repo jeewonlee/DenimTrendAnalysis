@@ -8,7 +8,7 @@ from collections import Counter
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram
 #from sklearn.decomposition import NMF, LatentDirichletAllocation
-#import jw_tokenize as tw
+import jw_tokenize as tw
 from langdetect import detect
 #from stop_words import get_stop_words
 
@@ -68,4 +68,4 @@ if __name__ == '__main__':
     ads_df, ads_index = filtering_ads(noise_df)
     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     final, bad_index =remove_badword(nonen_df)
-    final.to_csv('../../cleandata/2013Q1.csv', sep=';')
+    cd final.to_csv('../../cleandata/2013Q1.csv', sep=';')
