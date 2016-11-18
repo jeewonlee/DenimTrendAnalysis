@@ -68,4 +68,4 @@ if __name__ == '__main__':
     ads_df, ads_index = filtering_ads(noise_df)
     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     final, bad_index =remove_badword(nonen_df)
-    cd final.to_csv('../../cleandata/2013Q3.csv', sep=';')
+    final.to_csv('../../cleandata/2013Q3.csv', sep=';')
