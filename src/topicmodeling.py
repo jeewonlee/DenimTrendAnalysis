@@ -33,8 +33,9 @@ def vec(df):
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
     with open('../analysis/analysis.txt','ab') as f:
-        f.write("2013Q1\n")
+        f.write("\n\n2013Q1\n")
         f.write(model.__class__.__name__)
+        f.write("\n")
         for topic_idx, topic in enumerate(model.components_):
             print("Topic #%d:" % topic_idx)
             words=(",".join([feature_names[i]
@@ -43,6 +44,7 @@ def print_top_words(model, feature_names, n_top_words):
             allwords.append(words)
             f.write("Topic #%d:" % topic_idx)
             f.write(words)
+            f.write("\n")
         print()
     f.close()
     return allwords
