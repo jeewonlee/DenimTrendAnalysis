@@ -100,8 +100,8 @@ if __name__ == '__main__':
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_words = run_nmf(vectorizer, X, features, 100)
-    svd, n_topics, svd_words = run_SVD(vectorizer, X, features, 100)
+    nmf_words = run_nmf(vectorizer, X, features, 50)
+    svd, n_topics, svd_words = run_SVD(vectorizer, X, features, 50)
     svd_val(n_topics, svd)
     #lda_words = run_LDA(vectorizer, X, features, 20)
 
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     stop_words = get_stop_words('en')
     stop_words.extend(['saturdayonlin','nigga','wear', 'denim','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every'])
 
-    vectorizer2 = TfidfVectorizer(stop_words=stop_words, ngram_range=(1,2))
+    vectorizer2 = TfidfVectorizer(stop_words=stop_words)
     X2 = vectorizer.fit_transform(all_words)
     # vectorizer = CountVectorizer(stop_words='english', ngram_range=(1,3))
     # X = vectorizer.fit_transform(df['text'].fillna(''))
