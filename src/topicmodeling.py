@@ -21,7 +21,7 @@ def topic_modeling(df, topics):
 
 def vec(df):
     stop_words = get_stop_words('en')
-    stop_words.extend(['saturdayonline','nigga','wear', 'denim','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every','pair'])
+    stop_words.extend(['sexiaws','qigfa2', 'http','saturdayonline','nigga','wear', 'denim','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every','pair'])
 
     vectorizer = TfidfVectorizer(stop_words=stop_words, ngram_range=(1,2))
     X = vectorizer.fit_transform(df['text'].fillna(''))
@@ -86,7 +86,7 @@ def run_LDA(vectorizer, X, features, topics):
 
     print("\nTopics in LDA model:")
     # tf_feature_names = vectorizer.get_feature_names()
-    print_top_words(lda, feature, 20)
+    print_top_words(lda, features, 20)
     return mat
 
 def svd_val(n_topics, svd):
