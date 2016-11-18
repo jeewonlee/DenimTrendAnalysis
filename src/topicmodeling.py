@@ -34,8 +34,7 @@ def print_top_words(model, feature_names, n_top_words):
     allwords = []
     with open('../analysis/analysis.txt','ab') as f:
         f.write("2013Q1\n")
-        f.write(model.__name__)
-        f.write("\n")
+        f.write(model.__class__.__name__)
         for topic_idx, topic in enumerate(model.components_):
             print("Topic #%d:" % topic_idx)
             words=(",".join([feature_names[i]
