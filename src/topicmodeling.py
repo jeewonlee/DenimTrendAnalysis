@@ -110,8 +110,11 @@ def run_LDA(vectorizer, X, features, topics):
 
 def svd_val(n_topics, svd):
     vals = svd.explained_variance_ratio_
-    for i in np.arange(20):
-        print i, ": ", vals[i]
+    with open('../analysis/analysis.txt','ab') as f:
+        for i in np.arange(20):
+            print i, ": ", vals[i]
+            f.write(i, ": ", vals[i])
+    f.close()
 
 if __name__ == '__main__':
     #print 20, "topics"
