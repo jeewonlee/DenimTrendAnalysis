@@ -7,7 +7,7 @@ from collections import Counter
 from scipy.spatial.distance import pdist, squareform
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram
-from sklearn.decomposition import NMF, LatentDirichletAllocation, PCA
+from sklearn.decomposition import NMF, LatentDirichletAllocation, TruncatedPCA
 import jw_tokenize as tw
 from langdetect import detect
 from stop_words import get_stop_words
@@ -63,7 +63,7 @@ def run_nmf(vectorizer, X, features, topics):
     print_top_words(nmf, features, 20)
 
 def run_PCA(vectorizer, X, features, topics):
-    pca = PCA(n_components=topics)
+    pca = TruncatedPCA(n_components=topics)
     pca.fit_transform(X)
     print("\nTopics in PCA model:")
     print_top_words(pca, features, 20)
@@ -92,8 +92,8 @@ if __name__ == '__main__':
     df = pd.read_csv('../../cleandata/2013Q2.csv', delimiter=';')
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     vectorizer, X, features = vec(df)
-    run_kmean(vectorizer, X, features, 20)
-    run_nmf(vectorizer, X, features, 20)
+    # run_kmean(vectorizer, X, features, 20)
+    # run_nmf(vectorizer, X, features, 20)
     pca, n_topics = run_PCA(vectorizer, X, features, 20)
     pca_val(n_topics, pca)
     #topic_modeling(df, 20)
