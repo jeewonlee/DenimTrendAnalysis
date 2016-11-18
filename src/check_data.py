@@ -28,12 +28,12 @@ if __name__ == '__main__':
     print len(df)
     print df.date.unique()
     print "2014 07"
-    df = pd.read_csv('../../cleandata/201407.csv', sep=';')
+    df = pd.read_csv('../../data/201407.csv', sep=';')
     print df.columns
     print len(df)
     print df.date.unique()
     print "2014 08"
-    df = pd.read_csv('../../cleandata/201408.csv', sep=';')
+    df = pd.read_csv('../../data/201408.csv', sep=';')
     print df.columns
     print len(df)
     # print df.date.unique()
