@@ -21,7 +21,7 @@ def topic_modeling(df, topics):
 
 def vec(df):
     stop_words = get_stop_words('en')
-    stop_words.extend(['saturdayonlin','nigga','wear', 'denim','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every'])
+    stop_words.extend(['saturdayonline','nigga','wear', 'denim','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every'])
 
     vectorizer = TfidfVectorizer(stop_words=stop_words, ngram_range=(1,2))
     X = vectorizer.fit_transform(df['text'].fillna(''))
@@ -100,8 +100,8 @@ if __name__ == '__main__':
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_words = run_nmf(vectorizer, X, features, 20)
-    svd, n_topics, svd_words = run_SVD(vectorizer, X, features, 20)
+    nmf_words = run_nmf(vectorizer, X, features, 1000)
+    svd, n_topics, svd_words = run_SVD(vectorizer, X, features, 1000)
     svd_val(n_topics, svd)
     #lda_words = run_LDA(vectorizer, X, features, 20)
 
