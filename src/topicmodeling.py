@@ -114,8 +114,8 @@ if __name__ == '__main__':
     # vectorizer = CountVectorizer(stop_words='english', ngram_range=(1,3))
     # X = vectorizer.fit_transform(df['text'].fillna(''))
     features2 = vectorizer.get_feature_names()
-    nmf_words2 = run_nmf(vectorizer2, X2, features2, 20)
-    svd2, n_topics2, svd_words2 = run_SVD(vectorizer2, X2, features2, 20)
+    nmf_words2 = run_nmf(vectorizer2, X2, features2, 10)
+    svd2, n_topics2, svd_words2 = run_SVD(vectorizer2, X2, features2, 10)
 
     #topic_modeling(df, 20)
     # print "\n2014 second quarter"
