@@ -94,7 +94,7 @@ if __name__ == '__main__':
     vectorizer, X, features = vec(df)
     # run_kmean(vectorizer, X, features, 20)
     # run_nmf(vectorizer, X, features, 20)
-    pca, n_topics = run_PCA(vectorizer, X, features, 20)
+    pca, n_topics = run_SVD(vectorizer, X, features, 20)
     pca_val(n_topics, pca)
     #topic_modeling(df, 20)
     # print "\n2014 second quarter"
