@@ -72,7 +72,7 @@ def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
     svd.fit_transform(X)
     print("\nTopics in truncated SVD model:")
-    words = print_top_words(pca, features, 20)
+    words = print_top_words(svd, features, 20)
     return svd, topics, words
 
 def run_LDA(vectorizer, X, features, topics):
