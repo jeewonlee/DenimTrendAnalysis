@@ -50,16 +50,16 @@ def print_top_words(model, feature_names, n_top_words):
     f.close()
     return allwords
 
-def print_top_words2(model, feature_names, n_top_words):
-    allwords = []
-    for topic_idx, topic in enumerate(model.components_):
-        print("Topic #%d:" % topic_idx)
-        words=(" ".join([feature_names[i]
-                        for i in topic.argsort()[:-n_top_words - 1:-1]]))
-        print words
-        allwords.append(words)
-    print()
-    return allwords
+# def print_top_words2(model, feature_names, n_top_words):
+#     allwords = []
+#     for topic_idx, topic in enumerate(model.components_):
+#         print("Topic #%d:" % topic_idx)
+#         words=(" ".join([feature_names[i]
+#                         for i in topic.argsort()[:-n_top_words - 1:-1]]))
+#         print words
+#         allwords.append(words)
+#     print()
+#     return allwords
 
 def run_kmean(vectorizer, X, features, topics):
     # 1. Apply k-means clustering to the twitter
@@ -83,7 +83,9 @@ def run_kmean(vectorizer, X, features, topics):
 def run_nmf(vectorizer, X, features, topics):
     #4.NMF
     nmf = NMF(n_components=topics, random_state=1,alpha=.1, l1_ratio=.5)
-    mat = nmf.fit_transform(X)
+    with open('nmf.pkl', 'wb') as output:
+        mat = nmf.fit_transform(X)
+        pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
     print("\nTopics in NMF model:")
     #tfidf_feature_names = vectorizer.get_feature_names()
     print_top_words(nmf, features, 20)
@@ -91,7 +93,9 @@ def run_nmf(vectorizer, X, features, topics):
 
 def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
-    mat = svd.fit_transform(X)
+    with open('svd.pkl', 'wb') as output:
+        mat = svd.fit_transform(X)
+        pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
     print("\nTopics in truncated SVD model:")
     print_top_words(svd, features, 20)
     return svd, topics, mat
@@ -118,9 +122,9 @@ def svd_val(n_topics, svd):
             f.write(str(temp))
     f.close()
 
-def save_model():
-    with open('models.pkl', 'wb') as output:
-        pickle.dump(company1, output, pickle.HIGHEST_PROTOCOL)
+# def save_model(model):
+#     with open('models.pkl', 'wb') as output:
+#         pickle.dump(model, output, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     #print 20, "topics"
