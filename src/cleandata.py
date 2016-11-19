@@ -30,6 +30,8 @@ def remove_noise(df):
     for index, tweet in enumerate(df.text):
         if 'jeans' not in str(tweet).decode("utf8").lower():
             noise_index.append(index)
+        if '' in str(tweet).decode("utf8").lower():
+            noise_index.append(index)
     return df.drop(df.index[noise_index]), noise_index
 
 #Remove advertisement
