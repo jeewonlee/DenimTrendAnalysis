@@ -60,12 +60,14 @@ def filter_nonen(df):
     nonen_index = []
     lan_list=[]
     for index, tweet in enumerate(df.text):
-        if tweet:
+        try:
             lan = detect(str(tweet).decode("utf8"))
             print index
             if lan !='en':
                 nonen_index.append(index)
                 lan_list.append(lan)
+        except:
+            continue
     return df.drop(df.index[nonen_index]), nonen_index, lan_list
 
 #remove badwords
