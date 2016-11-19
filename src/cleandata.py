@@ -46,7 +46,7 @@ def filter_nonen(df):
     nonen_index = []
     lan_list=[]
     for index, tweet in enumerate(df.text):
-        if len(tweet)>0:
+        if tweet:
             lan = detect(str(tweet).decode("utf8"))
             print index
             if lan !='en':
@@ -63,11 +63,11 @@ def remove_badword(df):
     return df.drop(df.index[bad_index]), bad_index
 
 if __name__ == '__main__':
-    #df = create_df('../../data/201506.csv','../../data/201507.csv','../../data/201508.csv')
-    ads_df = pd.read_csv('../../data/201506.csv', delimiter=';')
-    ads_df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
-    #noise_df, noise_arr =remove_noise(df)
-    #ads_df, ads_index = filtering_ads(noise_df)
+    df = create_df('../../data/201506.csv','../../data/201507.csv','../../data/201508.csv')
+    #ads_df = pd.read_csv('../../data/201507.csv', delimiter=';')
+    #ads_df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    noise_df, noise_arr =remove_noise(df)
+    ads_df, ads_index = filtering_ads(noise_df)
     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     #final, bad_index =remove_badword(nonen_df)
     #final.to_csv('../../cleandata/2015Q3.csv', sep=';')
