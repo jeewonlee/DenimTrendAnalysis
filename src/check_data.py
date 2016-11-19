@@ -3,7 +3,7 @@ import numpy as np
 
 if __name__ == '__main__':
     print "2015 q1"
-    df = pd.read_csv('../../data/2015Q1.csv', sep=';')
+    df = pd.read_csv('../../cleandata/2015Q1.csv', sep=';')
     print df.columns
     print len(df)
     print df.date.unique()
