@@ -129,9 +129,9 @@ def svd_val(n_topics, svd):
 if __name__ == '__main__':
     #print 20, "topics"
 #    print "2013 first quarter"
-    df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
+    #df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
-    #df = pd.read_csv('../../data/data/201402.csv', delimiter=';')
+    df = pd.read_csv('../../data/twitter/201402.csv', delimiter=';')
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
     nmf_mat = run_nmf(vectorizer, X, features, 100)
