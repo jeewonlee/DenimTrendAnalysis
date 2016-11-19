@@ -11,6 +11,7 @@ from sklearn.decomposition import NMF, LatentDirichletAllocation, TruncatedSVD
 import jw_tokenize as tw
 from langdetect import detect
 from stop_words import get_stop_words
+import pickle
 
 #Topic Modeling
 def topic_modeling(df, topics):
@@ -116,6 +117,10 @@ def svd_val(n_topics, svd):
             temp = i+': '+vals[i]
             f.write(str(temp))
     f.close()
+
+def save_model():
+    with open('models.pkl', 'wb') as output:
+        pickle.dump(company1, output, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     #print 20, "topics"

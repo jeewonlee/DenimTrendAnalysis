@@ -24,6 +24,20 @@ def create_df(filename1, filename2, filename3):
     df=df.append(df2, ignore_index=True)
     return df
 
+def create_yr_df(filename1, filename2, filename3, filename4):
+    df = pd.read_csv(filename1,delimiter=';')
+    df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    df1 = pd.read_csv(filename2,delimiter=';')
+    df1.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    df2 = pd.read_csv(filename3,delimiter=';')
+    df2.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    df3 = pd.read_csv(filename4,delimiter=';')
+    df3.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    df=df.append(df1, ignore_index=True)
+    df=df.append(df2, ignore_index=True)
+    df=df.append(df3, ignore_index=True)
+    return df
+
 #Remove tweets without word jeans
 def remove_noise(df):
     noise_index = []
@@ -71,3 +85,4 @@ if __name__ == '__main__':
     nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     final, bad_index =remove_badword(nonen_df)
     final.to_csv('../../cleandata/2014Q4.csv', sep=';')
+    #create_yr_df(filename1, filename2, filename3, filename4):
