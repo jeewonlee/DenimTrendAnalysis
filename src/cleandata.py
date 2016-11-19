@@ -30,8 +30,6 @@ def remove_noise(df):
     for index, tweet in enumerate(df.text):
         if 'jeans' not in str(tweet).decode("utf8").lower():
             noise_index.append(index)
-        if '' in str(tweet).decode("utf8").lower():
-            noise_index.append(index)
     return df.drop(df.index[noise_index]), noise_index
 
 #Remove advertisement
@@ -48,11 +46,12 @@ def filter_nonen(df):
     nonen_index = []
     lan_list=[]
     for index, tweet in enumerate(df.text):
-        lan = detect(str(tweet).decode("utf8"))
-        print index
-        if lan !='en':
-            nonen_index.append(index)
-            lan_list.append(lan)
+        if tweet:
+            lan = detect(str(tweet).decode("utf8"))
+            print index
+            if lan !='en':
+                nonen_index.append(index)
+                lan_list.append(lan)
     return df.drop(df.index[nonen_index]), nonen_index, lan_list
 
 #remove badwords
