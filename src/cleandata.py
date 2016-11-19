@@ -46,7 +46,7 @@ def filter_nonen(df):
     nonen_index = []
     lan_list=[]
     for index, tweet in enumerate(df.text):
-        if tweet:
+        if len(tweet)>0:
             lan = detect(str(tweet).decode("utf8"))
             print index
             if lan !='en':
