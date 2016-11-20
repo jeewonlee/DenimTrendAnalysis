@@ -83,9 +83,9 @@ def run_kmean(vectorizer, X, features, topics):
 def run_nmf(vectorizer, X, features, topics):
     #4.NMF
     nmf = NMF(n_components=topics, random_state=1,alpha=.1, l1_ratio=.5)
-    #with open('nmf.pkl', 'wb') as output:
-    mat = nmf.fit_transform(X)
-    #    pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
+    with open('nmf.pkl', 'wb') as output:
+        mat = nmf.fit_transform(X)
+        pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
     print("\nTopics in NMF model:")
     #tfidf_feature_names = vectorizer.get_feature_names()
     print_top_words(nmf, features, 20)
@@ -93,9 +93,9 @@ def run_nmf(vectorizer, X, features, topics):
 
 def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
-    #with open('svd.pkl', 'wb') as output:
-    mat = svd.fit_transform(X)
-    #    pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
+    with open('svd.pkl', 'wb') as output:
+        mat = svd.fit_transform(X)
+        pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
     print("\nTopics in truncated SVD model:")
     print_top_words(svd, features, 20)
     return svd, topics, mat
@@ -135,8 +135,8 @@ if __name__ == '__main__':
     #df = df[100:]
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_mat = run_nmf(vectorizer, X, features, 100)
-    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 100)
+    nmf_mat = run_nmf(vectorizer, X, features, 50)
+    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
     svd_val(n_topics, svd)
     #lda_mat = run_LDA(vectorizer, X, features, 50)
 #    print "nmf mat", nmf_mat.shape()
