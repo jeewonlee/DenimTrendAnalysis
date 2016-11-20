@@ -2,26 +2,31 @@ import pandas as pd
 import numpy as np
 
 if __name__ == '__main__':
-    print "2013"
-    df = pd.read_csv('../../cleandata/2013.csv', sep=';')
+    print "all"
+    df = pd.read_csv('../../cleandata/all.csv', sep=';')
     print df.columns
     print len(df)
     print df.date.unique()
-    print "2014"
-    df = pd.read_csv('../../cleandata/2014.csv', sep=';')
-    print df.columns
-    print len(df)
-    print df.date.unique()
-    print "2015"
-    df = pd.read_csv('../../cleandata/2015.csv', sep=';')
-    print df.columns
-    print len(df)
-    print df.date.unique()
-    print "2016"
-    df = pd.read_csv('../../cleandata/2016.csv', sep=';')
-    print df.columns
-    print len(df)
-    print df.date.unique()
+    # print "2013"
+    # df = pd.read_csv('../../cleandata/2013.csv', sep=';')
+    # print df.columns
+    # print len(df)
+    # print df.date.unique()
+    # print "2014"
+    # df = pd.read_csv('../../cleandata/2014.csv', sep=';')
+    # print df.columns
+    # print len(df)
+    # print df.date.unique()
+    # print "2015"
+    # df = pd.read_csv('../../cleandata/2015.csv', sep=';')
+    # print df.columns
+    # print len(df)
+    # print df.date.unique()
+    # print "2016"
+    # df = pd.read_csv('../../cleandata/2016.csv', sep=';')
+    # print df.columns
+    # print len(df)
+    # print df.date.unique()
 
     # print "2016 Q1"
     # df = pd.read_csv('../../cleandata/2016Q1.csv', sep=';')
