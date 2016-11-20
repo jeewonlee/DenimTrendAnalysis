@@ -2,22 +2,22 @@ import pandas as pd
 import numpy as np
 
 if __name__ == '__main__':
-    print "2016Q3.csv"
+    print "2013"
     df = pd.read_csv('../../cleandata/2013.csv', sep=';')
     print df.columns
     print len(df)
     print df.date.unique()
-    print "2014 07"
+    print "2014"
     df = pd.read_csv('../../cleandata/2014.csv', sep=';')
     print df.columns
     print len(df)
     print df.date.unique()
-    print "2014 08"
+    print "2015"
     df = pd.read_csv('../../cleandata/2015.csv', sep=';')
     print df.columns
     print len(df)
     print df.date.unique()
-    print "2014 Q4"
+    print "2016"
     df = pd.read_csv('../../cleandata/2016.csv', sep=';')
     print df.columns
     print len(df)
