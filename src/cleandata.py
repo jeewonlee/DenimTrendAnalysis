@@ -37,10 +37,10 @@ def create_yr_df(filename1, filename2, filename3, filename4):
     print df1.columns
     print df2.columns
     print df3.columns
-    # df=df.append(df1, ignore_index=True)
-    # df=df.append(df2, ignore_index=True)
-    # df=df.append(df3, ignore_index=True)
-    #df.to_csv('../../cleandata/2013.csv', sep=';')
+    df=df.append(df1, ignore_index=True)
+    df=df.append(df2, ignore_index=True)
+    df=df.append(df3, ignore_index=True)
+    df.to_csv('../../cleandata/2013.csv', sep=';')
     return df
 
 #Remove tweets without word jeans
