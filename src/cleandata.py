@@ -36,6 +36,7 @@ def create_yr_df(filename1, filename2, filename3, filename4):
     df=df.append(df1, ignore_index=True)
     df=df.append(df2, ignore_index=True)
     df=df.append(df3, ignore_index=True)
+    df.to_csv('../../cleandata/2013.csv', sep=';')
     return df
 
 #Remove tweets without word jeans
@@ -79,12 +80,12 @@ def remove_badword(df):
     return df.drop(df.index[bad_index]), bad_index
 
 if __name__ == '__main__':
-    df = create_df('../../data/201606.csv','../../data/201607.csv','../../data/201608.csv')
-    #ads_df = pd.read_csv('../../data/201507.csv', delimiter=';')
-    #ads_df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
-    noise_df, noise_arr =remove_noise(df)
-    ads_df, ads_index = filtering_ads(noise_df)
-    nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
-    final, bad_index =remove_badword(nonen_df)
-    final.to_csv('../../cleandata/2016Q3.csv', sep=';')
-    #create_yr_df(filename1, filename2, filename3, filename4):
+    # df = create_df('../../data/201606.csv','../../data/201607.csv','../../data/201608.csv')
+    # #ads_df = pd.read_csv('../../data/201507.csv', delimiter=';')
+    # #ads_df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    # noise_df, noise_arr =remove_noise(df)
+    # ads_df, ads_index = filtering_ads(noise_df)
+    # nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
+    # final, bad_index =remove_badword(nonen_df)
+    # final.to_csv('../../cleandata/2016Q3.csv', sep=';')
+    create_yr_df('../../cleandata/2013Q1.csv', '../../cleandata/2013Q2.csv', '../../cleandata/2013Q3.csv', '../../cleandata/2013Q4.csv'):
