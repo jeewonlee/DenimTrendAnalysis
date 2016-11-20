@@ -132,6 +132,7 @@ if __name__ == '__main__':
     #df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
     df = pd.read_csv('../../data/cleandata/2014Q1.csv', delimiter=';')
+    df = df[100:]
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
     nmf_mat = run_nmf(vectorizer, X, features, 100)
