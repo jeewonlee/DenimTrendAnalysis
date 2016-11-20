@@ -198,7 +198,7 @@ def vec(df):
 
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
-    with open('../analysis/analysis_v1.txt','ab') as f:
+    with open('../analysis/analysis_v2.txt','ab') as f:
         f.write("\n\nAll Data\n")
         f.write(model.__class__.__name__)
         f.write("\n")
@@ -248,20 +248,20 @@ def run_kmean(vectorizer, X, features, topics):
 def run_nmf(vectorizer, X, features, topics):
     #4.NMF
     nmf = NMF(n_components=topics, random_state=1,alpha=.1, l1_ratio=.5)
-    with open('../../picklefiles/nmf_v1.pkl', 'wb') as output:
+    with open('../../picklefiles/nmf_v2.pkl', 'wb') as output:
         mat = nmf.fit_transform(X)
         pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
-    print("\nFirst stopwords edit, Topics in NMF model:")
+    print("\nSecond stopwords edit, Topics in NMF model:")
     #tfidf_feature_names = vectorizer.get_feature_names()
     print_top_words(nmf, features, 20)
     return mat
 
 def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
-    with open('../../picklefiles/svd_v1.pkl', 'wb') as output:
+    with open('../../picklefiles/svd_v2.pkl', 'wb') as output:
         mat = svd.fit_transform(X)
         pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
-    print("\nFirst stopwords edit, Topics in truncated SVD model:")
+    print("\nSecond stopwords edit, Topics in truncated SVD model:")
     print_top_words(svd, features, 20)
     return svd, topics, mat
 
@@ -280,7 +280,7 @@ def run_LDA(vectorizer, X, features, topics):
 
 def svd_val(n_topics, svd):
     vals = svd.explained_variance_ratio_
-    with open('../analysis/analysis_v1.txt','ab') as f:
+    with open('../analysis/analysis_v2.txt','ab') as f:
         for i in np.arange(20):
             print i, ": ", vals[i]
             temp = i+': '+vals[i]
