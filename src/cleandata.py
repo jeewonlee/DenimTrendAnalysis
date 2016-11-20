@@ -13,15 +13,15 @@ from langdetect import detect
 #from stop_words import get_stop_words
 
 #create dataframe
-def create_df(filename1, filename2):
+def create_df(filename1, filename2, filename3):
     df = pd.read_csv(filename1,delimiter=';')
     df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df1 = pd.read_csv(filename2,delimiter=';')
     df1.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
-    # df2 = pd.read_csv(filename3,delimiter=';')
-    # df2.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    df2 = pd.read_csv(filename3,delimiter=';')
+    df2.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df=df.append(df1, ignore_index=True)
-    #df=df.append(df2, ignore_index=True)
+    df=df.append(df2, ignore_index=True)
     return df
 
 def create_yr_df(filename1, filename2, filename3,filename4):
@@ -39,7 +39,7 @@ def create_yr_df(filename1, filename2, filename3,filename4):
     df=df.append(df1, ignore_index=True)
     df=df.append(df2, ignore_index=True)
     df=df.append(df3, ignore_index=True)
-    df.to_csv('../../cleandata/2015.csv', sep=';')
+    df.to_csv('../../cleandata/2016.csv', sep=';')
     return df
 
 #Remove tweets without word jeans
@@ -83,12 +83,12 @@ def remove_badword(df):
     return df.drop(df.index[bad_index]), bad_index
 
 if __name__ == '__main__':
-    df = create_df('../../data/201609.csv','../../data/201610.csv')
-    # #ads_df = pd.read_csv('../../data/201507.csv', delimiter=';')
-    # #ads_df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
-    noise_df, noise_arr =remove_noise(df)
-    ads_df, ads_index = filtering_ads(noise_df)
-    nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
-    final, bad_index =remove_badword(nonen_df)
-    final.to_csv('../../cleandata/2016Q4.csv', sep=';')
-    #create_yr_df('../../cleandata/2016Q1.csv', '../../cleandata/2016Q2.csv', '../../cleandata/2016Q3.csv')
+    # df = create_df('../../data/201609.csv','../../data/201610.csv')
+    # # #ads_df = pd.read_csv('../../data/201507.csv', delimiter=';')
+    # # #ads_df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    # noise_df, noise_arr =remove_noise(df)
+    # ads_df, ads_index = filtering_ads(noise_df)
+    # nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
+    # final, bad_index =remove_badword(nonen_df)
+    # final.to_csv('../../cleandata/2016Q4.csv', sep=';')
+    create_yr_df('../../cleandata/2016Q1.csv', '../../cleandata/2016Q2.csv', '../../cleandata/2016Q3.csv', '../../cleandata/2016Q4.csv')
