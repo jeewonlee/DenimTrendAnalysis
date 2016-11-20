@@ -33,7 +33,7 @@ def vec(df):
 
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
-    with open('../analysis/analysis100.txt','ab') as f:
+    with open('../analysis/analysis01.txt','ab') as f:
         f.write("\n\n2013Q1\n")
         f.write(model.__class__.__name__)
         f.write("\n")
@@ -131,12 +131,12 @@ if __name__ == '__main__':
 #    print "2013 first quarter"
     #df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
     #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
-    df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
+    df = pd.read_csv('../../cleandata/all.csv', delimiter=';')
     #df = df[100:]
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_mat = run_nmf(vectorizer, X, features, 50)
-    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
+    nmf_mat = run_nmf(vectorizer, X, features, 70)
+    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 70)
     svd_val(n_topics, svd)
     #lda_mat = run_LDA(vectorizer, X, features, 50)
 #    print "nmf mat", nmf_mat.shape()
