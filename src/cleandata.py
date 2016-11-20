@@ -24,23 +24,19 @@ def create_df(filename1, filename2, filename3):
     df=df.append(df2, ignore_index=True)
     return df
 
-def create_yr_df(filename1, filename2, filename3, filename4):
+def create_yr_df(filename1, filename2, filename3):
     df = pd.read_csv(filename1,delimiter=';')
     #df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df1 = pd.read_csv(filename2,delimiter=';')
     #df1.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df2 = pd.read_csv(filename3,delimiter=';')
     #df2.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
-    df3 = pd.read_csv(filename4,delimiter=';')
-    #df3.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     print df.columns
     print df1.columns
     print df2.columns
-    print df3.columns
     df=df.append(df1, ignore_index=True)
     df=df.append(df2, ignore_index=True)
-    df=df.append(df3, ignore_index=True)
-    df.to_csv('../../cleandata/2014.csv', sep=';')
+    df.to_csv('../../cleandata/2015.csv', sep=';')
     return df
 
 #Remove tweets without word jeans
@@ -92,4 +88,4 @@ if __name__ == '__main__':
     # nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     # final, bad_index =remove_badword(nonen_df)
     # final.to_csv('../../cleandata/2016Q3.csv', sep=';')
-    create_yr_df('../../cleandata/2014Q1.csv', '../../cleandata/2014Q2.csv', '../../cleandata/2014Q3.csv', '../../cleandata/2014Q4.csv')
+    create_yr_df('../../cleandata/2015Q1.csv', '../../cleandata/2015Q2.csv', '../../cleandata/2015Q3.csv')
