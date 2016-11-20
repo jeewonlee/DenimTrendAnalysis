@@ -135,8 +135,8 @@ if __name__ == '__main__':
     #df = df[100:]
     vectorizer, X, features = vec(df)
     #run_kmean(vectorizer, X, features, 20)
-    nmf_mat = run_nmf(vectorizer, X, features, 70)
-    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 70)
+    nmf_mat = run_nmf(vectorizer, X, features, 50)
+    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
     svd_val(n_topics, svd)
     #lda_mat = run_LDA(vectorizer, X, features, 50)
 #    print "nmf mat", nmf_mat.shape()
