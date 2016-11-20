@@ -44,7 +44,7 @@ def vec(df):
     #topic9
     stop_words.extend(['find'])
     #topic10
-    stop_words.extned(['pills','hands','everything','now','pulled','apart'])
+    stop_words.extend(['pills','hands','everything','now','pulled','apart'])
     #topic11
     stop_words.extend(['feel','feels','shit','right','quick','good'])
     #topic12
