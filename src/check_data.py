@@ -7,6 +7,7 @@ if __name__ == '__main__':
     print df.columns
     print len(df)
     print df.date.unique()
+    print len(df.date.unique())
     # print "2013"
     # df = pd.read_csv('../../cleandata/2013.csv', sep=';')
     # print df.columns
