@@ -26,13 +26,13 @@ def create_df(filename1, filename2, filename3):
 
 def create_yr_df(filename1, filename2, filename3, filename4):
     df = pd.read_csv(filename1,delimiter=';')
-    df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    #df.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df1 = pd.read_csv(filename2,delimiter=';')
-    df1.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    #df1.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df2 = pd.read_csv(filename3,delimiter=';')
-    df2.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    #df2.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df3 = pd.read_csv(filename4,delimiter=';')
-    df3.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
+    #df3.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     print df.columns
     print df1.columns
     print df2.columns
