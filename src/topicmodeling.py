@@ -106,7 +106,7 @@ def vec(df):
     #topic44
     stop_words.extend(['hearing','good','little','tea','kisses','hearin','likes'])
     #topic45
-    stop_words.extned(['bought','just','rock','said'])
+    stop_words.extend(['bought','just','rock','said'])
     #topic46
     stop_words.extend(['friday','cold','beer','radio','fried','cheicken','just'])
     #topic47
