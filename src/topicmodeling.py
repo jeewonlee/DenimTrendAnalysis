@@ -115,6 +115,74 @@ def vec(df):
     stop_words.extend(['got','necessary','can'])
     #topic49
     stop_words.extend(['eyes','meet','holding','closer','won','ever','meet','close','closer','til','eyes'])
+
+    #v1 stopwords
+    #topic0
+    stop_words.extend(['ll','best','money','life','always'])
+    #topic1
+    stop_words.extend(['alone','till','home','inside','photograph'])
+    #topic2
+    stop_words.extend(['love','pleaseeee','um','girl'])
+    #topic3,4-none
+    #topic5
+    stop_words.extend(['gene'])
+    #topic7
+    stop_words.extend(['kinda','well','kinda','ass','making','stare'])
+    #topic8-none
+    #topic12
+    stop_words.extend(['insde'])
+    #topic14
+    stop_words.extend(['labor'])
+    #topic15
+    stop_words.extend(['wish','comfy','confortable'])
+    #topic16
+    stop_words.extend(['life'])
+    #topic17
+    stop_words.extend(['weather'])
+    #topic18
+    stop_words.extend(['dad','pretty','sure','women','math','hell'])
+    #topic19
+    stop_words.extend(['whatever','mood','ring'])
+    #topic20
+    stop_words.extend(['looking','left'])
+    #topic 21
+    stop_words.extend(['favorite'])
+    #topic 22
+    stop_words.extend(['plz','barely','qusetion','cause','actually'])
+    #topic24
+    stop_words.extend(['didn','try','em','wanna','wears'])
+    #topic25
+    stop_words.extend(['something','follow','foot','five','x5'])
+    #topic26
+    stop_words.extend(['gonna'])
+    #topic27
+    stop_words.extend(['worn','since','months','worn','years','forever','week','havent','worn','shouldn','should','things','looks'])
+    #topic28,31
+    stop_words.extend(['one','question','thing','direction'])
+    #topic33
+    stop_words.extend(['lamo','might','ima','yeah'])
+    #topic 36
+    stop_words.extend(['kid','help','undo','ll','extended','swag','song','another','miss'])
+    #topic 37
+    stop_words.extend(['getting','big','small'])
+    #topic 38
+    stop_words.extend(['enough','hair','taking','com','fall'])
+    #topic 39
+    stop_words.extend(['whole','club','fall'])
+    #topic 40
+    stop_words.extend(['wanna','kinda','wanna'])
+    #topic 42
+    stop_words.extend(['damn','shake','one','ya','wears'])
+    #topic 43
+    stop_words.extend(['actually','might','comfortable','wow','combined','talking'])
+    #topic 44
+    stop_words.extend(['last','honestly','since','cant','dont','years','couldn'])
+    #topic 45
+    stop_words.extend(['show'])
+    #topic 46
+    stop_words.extend(['changin','putting','life','three','dryer','lotion','two','four'])
+    #topic 47
+    stop_words.extend(['putthing','feeling'])
     # stop_words.extend(['im','never','one','keep','meet','eyes', 'play','room','anymore','new','buy','bought','want','got','buying','finally','everything','feel','feels','can','none','anymore','finding'])
     # stop_words.extend(['school','dropped','lying','floor','band','everybody','saturday','need','pair','don','know','even','understand'])
     # stop_words.extend(['can','never','decide','believe','get','got','come','look','like','tell','mean','lol','followed','gotta','hear','love','new','looks','pairs','go','made','remember','still'])
