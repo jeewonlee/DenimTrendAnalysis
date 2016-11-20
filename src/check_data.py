@@ -7,21 +7,21 @@ if __name__ == '__main__':
     print df.columns
     print len(df)
     print df.date.unique()
-    # print "2014 07"
-    # df = pd.read_csv('../../data/201407.csv', sep=';')
-    # print df.columns
-    # print len(df)
-    # print df.date.unique()
-    # print "2014 08"
-    # df = pd.read_csv('../../data/201408.csv', sep=';')
-    # print df.columns
-    # print len(df)
-    # print df.date.unique()
-    # print "2014 Q4"
-    # df = pd.read_csv('../../cleandata/2014Q4.csv', sep=';')
-    # print df.columns
-    # print len(df)
-    # print df.date.unique()
+    print "2014 07"
+    df = pd.read_csv('../../cleandata/2014.csv', sep=';')
+    print df.columns
+    print len(df)
+    print df.date.unique()
+    print "2014 08"
+    df = pd.read_csv('../../cleandata/2015.csv', sep=';')
+    print df.columns
+    print len(df)
+    print df.date.unique()
+    print "2014 Q4"
+    df = pd.read_csv('../../cleandata/2016.csv', sep=';')
+    print df.columns
+    print len(df)
+    print df.date.unique()
     #
     # print "2013 Q1"
     # df = pd.read_csv('../../cleandata/2013Q1.csv', sep=';')

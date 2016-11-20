@@ -92,4 +92,4 @@ if __name__ == '__main__':
     # nonen_df, nonen_index, lan_lst = filter_nonen(ads_df)
     # final, bad_index =remove_badword(nonen_df)
     # final.to_csv('../../cleandata/2016Q3.csv', sep=';')
-    create_yr_df('../../cleandata/2013Q1.csv', '../../cleandata/2013Q2.csv', '../../cleandata/2013Q3.csv', '../../cleandata/2013Q4.csv')
+    create_yr_df('../../cleandata/2014Q1.csv', '../../cleandata/2014Q2.csv', '../../cleandata/2014Q3.csv', '../../cleandata/2014Q4.csv')
