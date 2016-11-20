@@ -21,7 +21,7 @@ def create_df(filename1, filename2):
     # df2 = pd.read_csv(filename3,delimiter=';')
     # df2.columns = [u'date', u'text', u'geo', u'mentions', u'hashtags', u'Unnamed: 5']
     df=df.append(df1, ignore_index=True)
-    df=df.append(df2, ignore_index=True)
+    #df=df.append(df2, ignore_index=True)
     return df
 
 def create_yr_df(filename1, filename2, filename3,filename4):
