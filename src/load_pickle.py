@@ -18,7 +18,7 @@ if __name__ == '__main__':
     print df.date.value_counts()
     print type(df.date[100])
     #dates = datetime.datetime.strptime(df.date,'%Y-%m-%d')
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d)
     #dates = df['date'].apply(datetime.datetime)
 
     dates = df['date']
