@@ -21,7 +21,6 @@ if __name__ == '__main__':
     # df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
     df['date'] = df.date.apply(datetime.datetime.strptime, args=('%Y-%m-%d',))
     #dates = df['date'].apply(datetime.datetime)
-
     dates = df['date']
     print dates
     print type(dates)
@@ -30,3 +29,5 @@ if __name__ == '__main__':
     mat_df['date']=dates
     mat_df.reset_index('date')
     print mat_df
+    print mat_df.date.month
+    #gensim docsim
