@@ -17,9 +17,11 @@ if __name__ == '__main__':
     print "length of dataframe",len(df)
     print df.date.value_counts()
     print type(df.date[100])
-    dates = datetime.datetime.strptime(df.date,'%Y-%m-%d')
+    #dates = datetime.datetime.strptime(df.date,'%Y-%m-%d')
+    df['date'] = pd.to_datetime(df['date'])
     #dates = df['date'].apply(datetime.datetime)
     #print dates
+    dates = df['date']
     print type(dates)
     mat_df = pd.DataFrame(mat)
     mat_df.set_index(dates)
