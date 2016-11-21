@@ -16,8 +16,8 @@ if __name__ == '__main__':
     print "length of dataframe",len(df)
     print df.date.value_counts()
     print type(df.date[100])
-    dates = df.date
-    print dates
+    dates = pd.to_datetime(df.date)
+    #print dates
     print type(dates)
     mat_df = pd.DataFrame(mat)
     mat_df.set_index(dates)
