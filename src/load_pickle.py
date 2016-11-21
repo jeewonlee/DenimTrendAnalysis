@@ -24,6 +24,7 @@ if __name__ == '__main__':
     dates = df['date']
     print dates
     print type(dates)
+    print type(dates[1])
     mat_df = pd.DataFrame(mat)
     mat_df.set_index(dates)
-    #print mat_df
+    print mat_df
