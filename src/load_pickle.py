@@ -29,5 +29,6 @@ if __name__ == '__main__':
     mat_df['date']=dates
     mat_df.reset_index('date')
     print mat_df
-    print mat_df['date'].month
+    print mat_df.info
+    print mat_df.date.dt.month
     #gensim docsim
