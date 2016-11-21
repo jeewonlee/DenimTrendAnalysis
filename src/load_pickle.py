@@ -20,9 +20,10 @@ if __name__ == '__main__':
     #dates = datetime.datetime.strptime(df.date,'%Y-%m-%d')
     df['date'] = pd.to_datetime(df['date'])
     #dates = df['date'].apply(datetime.datetime)
-    #print dates
+
     dates = df['date']
+    print dates
     print type(dates)
     mat_df = pd.DataFrame(mat)
     mat_df.set_index(dates)
-    print mat_df
+    #print mat_df
