@@ -12,17 +12,40 @@ import jw_tokenize as tw
 from langdetect import detect
 from stop_words import get_stop_words
 import pickle
+'''
+All_nonstopwords.rf - without any stop words
+analysis_v1.txt - after filter v1 stopwords(50 topics)
+analysis_v2.txt - after filter v2 stopwords(50 topics)
+analysis_v3.txt - 20 topics
+analysis_v4.txt - 15 topics
+analysis_v5.txt - 20 topics with word denim
+analysis_v6.txt - new dataset after filter iklan 50 topics
+analysis_v7.txt - new dataset after filter iklan 20 topics
+analysis_v8.txt - new dataset v2 after songs 20 topics
+analysis_v9.txt - new dataset v2 after songs 50 topics
+analysis_v8_LDA.txt - new dataset v2 after songs 20 topics
+analysis_v10.txt - new dataset v3 after songs 30 topics
+analysis_v11.txt - new dataset v4 after filter ads - saturdaynightonline
+vectorizer_v1 - new dataset after filter iklan
+vectorizer_v2 - new dataset after filter song
+vectorizer_v3 - new dataset after filter more songs
+all.csv - basic cleaning, nonenglish, URLs
+all_v1.csv - Iklan ads
+all_v2.csv - after clean songs
+all_v3.csv - after clean more songs
+all_v4.csv - after clean ads saturdaynight online
+'''
 
 #Topic Modeling
-def topic_modeling(df, topics):
-    vectorizer, X, features = vec(df)
-    run_kmean(vectorizer, X, features, topics)
-    run_nmf(vectorizer, X, features, topics)
-    run_PCA(vectorizer, X, features, topics)
+# def topic_modeling(df, topics):
+#         vectorizer, X, features = vec(df)
+#     run_kmean(vectorizer, X, features, topics)
+#     run_nmf(vectorizer, X, features, topics)
+#     run_PCA(vectorizer, X, features, topics)
 
 def vec(df):
     stop_words = get_stop_words('en')
-    stop_words.extend(['nigga','niggas''sexiaws','qigfa2', 'http','saturdayonline','nigga','wear', 'denim','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every','pair'])
+    stop_words.extend(['nigga','niggas''sexiaws','qigfa2', 'http','saturdayonline','nigga','wear','today','tomorrow','dick','saturdaynightonline', 'p9', 'romeo', 'playlyitjbyp9romeo','romeoplaylyitj','night', 'day', 'yesterday', 'wearing','tonight','every','pair'])
     #All tweets
     #Topic0
     stop_words.extend(['lol','people','never','work','fuck','im','hot','take'])
@@ -183,6 +206,33 @@ def vec(df):
     stop_words.extend(['changin','putting','life','three','dryer','lotion','two','four'])
     #topic 47
     stop_words.extend(['putthing','feeling'])
+
+    #after v3 - 20 topics
+    #topic0
+    stop_words.extend(['dress','going'])
+    #topic1
+    stop_words.extend(['cool','better'])
+    #topic2
+    stop_words.extend(['del','lana','baby'])
+    #topic3
+    stop_words.extend(['suplier','going'])
+    #topic4
+    stop_words.extend(['chicken','old'])
+    #topic8-none
+    stop_words.extend(['apple','bottom','lookin','da','skin','ma','theme'])
+    #topic12
+    stop_words.extend(['dirty','thighs','ma','theme'])
+    #topic14
+    stop_words.extend(['going','everyday'])
+    #topic15
+    stop_words.extend(['holidays','admittedly','walmart'])
+    #topic16
+    stop_words.extend(['doesn','happy','walmart'])
+
+    #v4
+    #topic3
+    stop_words.extend(['22d98247','dll','chino','iklan','suplier'])
+
     # stop_words.extend(['im','never','one','keep','meet','eyes', 'play','room','anymore','new','buy','bought','want','got','buying','finally','everything','feel','feels','can','none','anymore','finding'])
     # stop_words.extend(['school','dropped','lying','floor','band','everybody','saturday','need','pair','don','know','even','understand'])
     # stop_words.extend(['can','never','decide','believe','get','got','come','look','like','tell','mean','lol','followed','gotta','hear','love','new','looks','pairs','go','made','remember','still'])
@@ -194,11 +244,17 @@ def vec(df):
     # vectorizer = CountVectorizer(stop_words='english', ngram_range=(1,3))
     # X = vectorizer.fit_transform(df['text'].fillna(''))
     features = vectorizer.get_feature_names()
+    with open('../../picklefiles/vectorizer_v4.pkl', 'wb') as output:
+        pickle.dump(vectorizer, output, pickle.HIGHEST_PROTOCOL)
+    with open('../../picklefiles/X_v4.pkl', 'wb') as output:
+        pickle.dump(X, output, pickle.HIGHEST_PROTOCOL)
+    with open('../../picklefiles/features_v4.pkl', 'wb') as output:
+        pickle.dump(features, output, pickle.HIGHEST_PROTOCOL)
     return vectorizer, X, features
 
 def print_top_words(model, feature_names, n_top_words):
     allwords = []
-    with open('../analysis/analysis_v2.txt','ab') as f:
+    with open('../analysis/analysis_v11.txt','ab') as f:
         f.write("\n\nAll Data\n")
         f.write(model.__class__.__name__)
         f.write("\n")
@@ -214,17 +270,6 @@ def print_top_words(model, feature_names, n_top_words):
         print()
     f.close()
     return allwords
-
-# def print_top_words2(model, feature_names, n_top_words):
-#     allwords = []
-#     for topic_idx, topic in enumerate(model.components_):
-#         print("Topic #%d:" % topic_idx)
-#         words=(" ".join([feature_names[i]
-#                         for i in topic.argsort()[:-n_top_words - 1:-1]]))
-#         print words
-#         allwords.append(words)
-#     print()
-#     return allwords
 
 def run_kmean(vectorizer, X, features, topics):
     # 1. Apply k-means clustering to the twitter
@@ -248,20 +293,20 @@ def run_kmean(vectorizer, X, features, topics):
 def run_nmf(vectorizer, X, features, topics):
     #4.NMF
     nmf = NMF(n_components=topics, random_state=1,alpha=.1, l1_ratio=.5)
-    with open('../../picklefiles/nmf_v2.pkl', 'wb') as output:
+    with open('../../picklefiles/nmf_v11.pkl', 'wb') as output:
         mat = nmf.fit_transform(X)
         pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
-    print("\nSecond stopwords edit, Topics in NMF model:")
+    print("\nThird stopwords edit, Topics in NMF model:")
     #tfidf_feature_names = vectorizer.get_feature_names()
     print_top_words(nmf, features, 20)
     return mat
 
 def run_SVD(vectorizer, X, features, topics):
     svd = TruncatedSVD(n_components=topics)
-    with open('../../picklefiles/svd_v2.pkl', 'wb') as output:
+    with open('../../picklefiles/svd_v11.pkl', 'wb') as output:
         mat = svd.fit_transform(X)
         pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
-    print("\nSecond stopwords edit, Topics in truncated SVD model:")
+    print("\nThird stopwords edit, Topics in truncated SVD model:")
     print_top_words(svd, features, 20)
     return svd, topics, mat
 
@@ -272,38 +317,32 @@ def run_LDA(vectorizer, X, features, topics):
                                     learning_offset=50.,
                                     random_state=0)
     mat=lda.fit_transform(X)
-
-    print("\nTopics in LDA model:")
-    # tf_feature_names = vectorizer.get_feature_names()
+    with open('../../picklefiles/LDA_v11.pkl', 'wb') as output:
+        mat = svd.fit_transform(X)
+        pickle.dump(mat, output, pickle.HIGHEST_PROTOCOL)
+    print("\nThird stopwords edit, Topics in truncated LDA model:")
     print_top_words(lda, features, 20)
     return mat
 
 def svd_val(n_topics, svd):
     vals = svd.explained_variance_ratio_
-    with open('../analysis/analysis_v2.txt','ab') as f:
+    with open('../analysis/analysis_v11.txt','ab') as f:
         for i in np.arange(20):
             print i, ": ", vals[i]
             temp = i+': '+vals[i]
             f.write(str(temp))
     f.close()
 
-# def save_model(model):
-#     with open('models.pkl', 'wb') as output:
-#         pickle.dump(model, output, pickle.HIGHEST_PROTOCOL)
-
 if __name__ == '__main__':
-    #print 20, "topics"
-#    print "2013 first quarter"
-    #df = pd.read_csv('../../cleandata/2013Q1.csv', delimiter=';')
-    #df = pd.read_csv('../../data/cleandata/2013Q1_temp.csv', delimiter=';')
-    df = pd.read_csv('../../cleandata/all.csv', delimiter=';')
-    #df = df[100:]
+    print 'yo'
+    df = pd.read_csv('../../cleandata/all_v4.csv', delimiter=';')
     vectorizer, X, features = vec(df)
+
     #run_kmean(vectorizer, X, features, 20)
-    nmf_mat = run_nmf(vectorizer, X, features, 50)
-    svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 50)
-    svd_val(n_topics, svd)
-    #lda_mat = run_LDA(vectorizer, X, features, 50)
-#    print "nmf mat", nmf_mat.shape()
-#    print "svd mat", svd_mat.shape()
-#    print "lda mat", lda_mat.shape()
+    # vectorizer = pickle.load(open('../../picklefiles/vectorizer_v4.pkl', "rb"))
+    # X = pickle.load(open('../../picklefiles/X_v4.pkl', "rb"))
+    # features = pickle.load(open('../../picklefiles/features_v4.pkl', "rb"))
+    nmf_mat = run_nmf(vectorizer, X, features, 30)
+    #svd, n_topics, svd_mat = run_SVD(vectorizer, X, features, 30)
+    #lda_mat = run_LDA(vectorizer, X, features, 30)
+    #svd_val(n_topics, svd)

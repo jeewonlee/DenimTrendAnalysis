@@ -1,0 +1,48 @@
+
+
+All Data
+NMF
+Topic #0:jeans,jeans jeans,shirt,butt,long,balmain,balmain jeans,jeans shirt,back,shirt jeans,shoes,cut,rip,sweats,shirts,cut jeans,girls,jeans long,cute,fat
+Topic #1:ripped,ripped jeans,jeans,jeans ripped,ripped skinny,black ripped,pocket ripped,band,cute,white ripped,cute ripped,knees,jeans rule,ripped black,black,thieves ripped,band thieves,thieves,rip,rule
+Topic #2:blue,blue jeans,jeans,sweeter,jeans sweeter,sweeter sweet,sweet,jeans white,re blue,white shirt,rey,jeans covered,covered colors,covered,colors,white,seams,rey blue,jeans blue,colors seams
+Topic #3:jeans fit,fit,jeans,waist,fit waist,snug,fit snug,butt,fit butt,legs,weight,bit jeans,complementing,complementing jeans,fit legs,fit tight,bit,fit fit,fit properly,fit skinny
+Topic #4:tight jeans,tight,jeans,jeans tight,luke,boys,white boys,tight booty,booty,butt,ilysm,luke5sos,hemmings,luke hemmings,tight skinny,super tight,fit tight,poem,loose,super
+Topic #5:skinny,skinny jeans,jeans,ripped skinny,black skinny,jeans skinny,back,jeans back,guys,guys skinny,black,ripped,white skinny,shoes,girls,boys,skinny genes,fat,legs,genes
+Topic #6:jeans 90,110 jeans,levis 120,120 minimal,90 jaket,minimal,jaket levis,110,120,90,levis,jaket,jeans,iklanbpn 110,iklanbpn,twitfjb 110,iklan_terupdate 110,iklan_terupdate,twitfjb,reseller_info 110
+Topic #7:shirt,white shirt,jeans white,white,shirt jeans,jeans shirt,jeans,shoes,black shirt,james dean,blue jeans,shirt james,dean,james,white boys,converse,shirt black,boys,jacket,shirt walk
+Topic #8:black,black jeans,jeans black,black skinny,jeans,leather black,leather,black shirt,black ripped,shirt black,ripped black,shirt,converse,black converse,many black,jacket,white black,faded,top,black boots
+Topic #9:pocket ripped,pocket,ripped jeans,ripped,jeans,pocket jeans,jeans pocket,5sos pocket,jeans luke5sos,jeans wont,back pocket,wont,hemmings 5sos,luke hemmings,hemmings,luke,back,luke5sos,5sos,edsheeran
+Topic #10:boots,jeans boots,fur,boots fur,shawty,jeans,shawty jeans,boots jeans,fur fur,jeans jeans,cowboy,cowboy boots,furrrr,furrr,sweaters,low,boots furrrr,jeans cowboy,applebottom,applebottom jeans
+Topic #11:white jeans,white,jeans,girls white,girls,white skinny,jeans white,harry white,boys,harry,white boys,jeans air,air,white ripped,body milk,top,black white,milk,jeans body,body
+Topic #12:high,waisted,high waisted,waisted jeans,jeans,jeans high,waist,high waist,crop,waist jeans,waisted shorts,high wasted,wasted,black high,tops,wasted jeans,top,waisted skinny,crop top,girls
+Topic #13:boyfriend,boyfriend jeans,jeans,jeans boyfriend,cute,cute boyfriend,ripped boyfriend,jeans cute,boyfriend boyfriend,fit boyfriend,pull boyfriend,pull,distressed boyfriend,heels,cutest boyfriend,cutest,mom boyfriend,baggy,ripped,needs boyfriend
+Topic #14:leggings,leggings jeans,jeans leggings,pants,yoga,yoga pants,jeans,pants leggings,sweat pants,sweat,pants jeans,pants sweat,jeans yoga,jeans pants,sweats,leggings yoga,sweatpants,girls,leggings aren,aren
+Topic #15:fit jeans,fit,jeans,able fit,able,fat,slim fit,weight,slim,butt,jeans fat,fat fit,ago,weight fit,fit skinny,butt fit,longer fit,fact fit,grade,sad
+Topic #16:mom,mom jeans,jeans,jeans mom,jeans stuffed,ugg,butt,stuffed ugg,stuffed,ugg boots,mom mom,mom skinny,jeans jeans,cute,back,re mom,waisted mom,asked,bc,stop
+Topic #17:shorts,jeans shorts,shorts jeans,cut,cut jeans,jeans,boot cut,boot,basketball shorts,basketball,summer,shorts fit,idk,shirts,jeans cut,jean shorts,jean,short,waisted shorts,pants
+Topic #18:re,jeans re,re jeans,re blue,jeans,weigh jeans,weigh,re skinny,long,jeans tight,short,re tight,re long,re fashion,disaster emo,fashion disaster,disaster,jacket skinny,emo,tight
+Topic #19:jeans painted,painted,painted tight,tight,jeans tight,luke,blue jeans,hemmings,luke hemmings,tight booty,luke5sos,ilysm,booty,jeans,poem,blue,hemmings jeans,poem luke,booty ilysm,ilysm luke
+
+
+All Data
+TruncatedSVD
+Topic #0:jeans,ripped,ripped jeans,fit,skinny,blue,blue jeans,skinny jeans,tight,jeans fit,tight jeans,white,pocket ripped,pocket,shirt,black,jeans jeans,fit jeans,white jeans,black jeans
+Topic #1:ripped,ripped jeans,pocket ripped,pocket,jeans ripped,ripped skinny,skinny,skinny jeans,black,black ripped,luke5sos,5sos,luke,jeans luke5sos,luke hemmings,hemmings,hemmings 5sos,5sos pocket,jeans wont,wont
+Topic #2:blue jeans,blue,white,jeans white,white shirt,shirt,tight,jeans painted,white jeans,painted tight,painted,tight jeans,black,sweeter,jeans sweeter,sweeter sweet,re blue,sweet,shirt jeans,jeans shirt
+Topic #3:fit,jeans fit,fit jeans,skinny,skinny jeans,tight,waist,tight jeans,fit waist,black,butt,snug,fit snug,black skinny,re,legs,ripped skinny,fat,fit butt,weight
+Topic #4:tight,tight jeans,skinny,skinny jeans,jeans tight,black,black skinny,ripped skinny,jeans painted,painted tight,painted,jeans skinny,re,guys,black jeans,back,boys,jeans back,luke,luke5sos
+Topic #5:skinny,skinny jeans,black,black skinny,white,ripped skinny,shirt,jeans skinny,white shirt,black jeans,jeans white,back,jeans back,guys,white jeans,shoes,guys skinny,white skinny,re,boots
+Topic #6:jeans 90,110 jeans,120 minimal,levis 120,90 jaket,minimal,jaket levis,110,120,90,levis,jaket,tight,iklanbpn 110,iklanbpn,twitfjb 110,iklan_terupdate 110,iklan_terupdate,twitfjb,reseller_info 110
+Topic #7:white,white jeans,shirt,jeans white,white shirt,black,black jeans,tight jeans,shirt jeans,jeans shirt,jeans black,boys,white boys,white skinny,girls,black shirt,shoes,girls white,black skinny,shorts
+Topic #8:black,black jeans,jeans black,black skinny,leather black,leather,blue,black shirt,ripped,black ripped,blue jeans,boots,ripped black,shirt black,high,waisted,high waisted,ripped jeans,jeans boots,jacket
+Topic #9:ripped,ripped jeans,jeans ripped,ripped skinny,black ripped,boyfriend,boyfriend jeans,shorts,re,high,mom,cute,waisted,high waisted,boots,waisted jeans,band,jeans shorts,jeans re,mom jeans
+Topic #10:boots,jeans boots,fur,boots fur,shirt,white shirt,shirt jeans,shawty,high,jeans shirt,jeans white,shawty jeans,waisted,high waisted,waisted jeans,boots jeans,shorts,mom,fur fur,leggings
+Topic #11:white jeans,white,boots,jeans boots,fur,boots fur,blue,blue jeans,jeans painted,painted,painted tight,high,waisted,high waisted,waisted jeans,re,black jeans,shawty,shawty jeans,black
+Topic #12:high,waisted,high waisted,waisted jeans,shorts,boyfriend,boyfriend jeans,mom,jeans shorts,mom jeans,leggings,shorts jeans,re,leggings jeans,jeans re,jeans high,waist,jeans leggings,pants,cute
+Topic #13:boyfriend,boyfriend jeans,jeans boyfriend,cute,mom,mom jeans,cute boyfriend,re,pocket,ripped boyfriend,pocket ripped,jeans cute,jeans re,leggings,pants,back,white jeans,leggings jeans,boyfriend boyfriend,jeans jeans
+Topic #14:leggings,leggings jeans,jeans leggings,pants,yoga,yoga pants,shorts,fit jeans,sweat pants,sweat,mom,pants leggings,jeans shorts,pants jeans,re,shorts jeans,mom jeans,pants sweat,jeans yoga,jeans re
+Topic #15:fit jeans,fit,shorts,jeans shorts,shorts jeans,mom,fat,mom jeans,boyfriend,boyfriend jeans,able fit,able,jeans fat,re,toner,toner jeans,back,rip,slim fit,jeans re
+Topic #16:mom,mom jeans,shorts,re,jeans re,jeans shorts,shorts jeans,jeans mom,cut,cut jeans,jeans fit,jeans jeans,white jeans,long,butt,jeans shirt,shoes,re jeans,jeans tight,shirt
+Topic #17:shorts,jeans shorts,shorts jeans,cut,cut jeans,boot cut,boot,jeans fit,summer,basketball shorts,basketball,shirt,white jeans,shirt jeans,pants,jeans shirt,shoes,jeans painted,painted,painted tight
+Topic #18:re,jeans re,jeans tight,cut,cut jeans,re jeans,painted,jeans painted,shirt,painted tight,pants,tight,fat,shirt jeans,back,re blue,luke,jeans shirt,weigh jeans,weigh
+Topic #19:jeans painted,painted,jeans tight,painted tight,tight,luke,shirt,hemmings,luke5sos,luke hemmings,booty,tight booty,jeans shirt,ilysm,shirt jeans,poem,hemmings jeans,luke luke5sos,poem luke,booty ilysm
