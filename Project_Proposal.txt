@@ -3,30 +3,8 @@ Final Project Idea
 I would like to analyze denim trend in last 3 years.
 
 1. Denim Topic Analysis - NLP
-Discover latent topics of fashion articles with word Denim.
--2016 FW, 2016 SS, 2015 FW, 2015 SS, 2014 FW, 2014 SS, 2013 FW
-  i) Data Source: Hearst API (Cosmopolitan, Elle, Seventeen)
+Discover latent topics from tweets with word Jeans for past 4 years.
+  i) Data Source: tweeter - scrape 100 tweets with word “jeans” per day from 12/2012 to 11/2016
   ii) Algorithms
-  : NMF, SVD and etc
-
-2. Denim Data Analysis - Statistical Inference
-Using the recent 3 years online shopping denim product list,
-analyze the trend in denim
-
-  i) Data Source: Shopstyle API
-  ii) EDA
-    - Price distribution
-    - Top 10 most distributed brand
-      :Also show favorite counts per each item
-    - Top 10 most popular brand
-      :Also show favorite counts per each item
-    - Top 10 words used the most in the product descriptions
-    - The average duration of product being on the market
-
-3. Denim SNS analysis - NLP
-Using the recent 3 years tweets with word Denim, analyze the trend in denim
-  i) Data Source: Twitter API
-  ii)
-    - Frequency graph(X-axis: time, y-axis: number of denim mentioned)
-    - Related word analysis: show top 20 words that mentioned the most with Denim
+  : NMF, SVD, LDA and etc
 
