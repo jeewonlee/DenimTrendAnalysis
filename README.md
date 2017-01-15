@@ -13,7 +13,7 @@ Discover denim trend using social network data
 
     - Used some of source codes from GetOldTweets--python(Got folder in src file)
 
-    - data files are not in GitHub
+    - data files are not saved in GitHub
 
 
     b) Algorithms used
@@ -21,16 +21,14 @@ Discover denim trend using social network data
 
 2. Folder/File descriptions
 
-  1) Analysis
-
-    : Model output Folder
+  1) Analysis (Model output Folder)
 
       a) analysis___.txt: Topics generated from each models
 
       b) extract_tweets___.txt: Sample tweets for each topics
           (ex)extract_twetts_v2.txt - sample tweets for analysis_v2.txt(NMF)
 
-  2) Src
+  2) Src (Python source file folder)
 
       a) GetTweets.py: scraped data from twitter website
 
@@ -38,15 +36,15 @@ Discover denim trend using social network data
 
       b) check_data.py: check if scraped data look okay
 
-      c) cleandata.py: combine data files and clean noise in the data
+      c) cleandata.py: combine data files/clean noise in the data
 
       d) jw_tokenize.py: tokenize tweets
 
       e) textanalysis.py: practice file for cleandata.py and topicmodeling.py
 
-      f) topicmodeling.py: add stopwords. Run TfidfVectorizer. Run model and save it as pickle file
+      f) topicmodeling.py: add stopwords/run TfidfVectorizer/run model and save it as pickle file
 
       g) load_pickle.py: load model pickle files to generate Topics and save to Analysis__.txt file
-      (# pickle files are not saved in github). Create W matrix as dataframe format for graph.
+      (# pickle files are not saved in github)/create W matrix(from NMF model) as dataframe format for graph.
 
       h) word2vec_main.py: run word2vec
